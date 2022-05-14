@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @Library("app-lib") _
 pipeline {
   agent any
@@ -28,5 +29,13 @@ pipeline {
       archiveArtifacts artifacts: 'target/*.war'
       cleanWs()
     }
+=======
+node{
+  stage('SCM Checkout'){
+  git 'https://github.com/Kiran8050/javahometech'
+ }
+  stage(Compile-Package){
+  sh 'mvn package'
+>>>>>>> 52df8938fa32ef2dc28656e652feeb95c88974f2
   }
 }
